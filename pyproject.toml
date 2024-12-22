@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "melonxsite"
+version = "1.0.0"
+description = ""
+authors = ["Stossy11 <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+python-dotenv = "^1.0.1"
+pillow = "^11.0.0"
+gunicorn = "^23.0.0"
+django-compressor = "^4.5.1"
+django-browser-reload = "^1.17.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

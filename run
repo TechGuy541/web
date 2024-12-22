@@ -1,0 +1,45 @@
+#!/bin/bash
+
+echo -e "Choose an action: 1) RunServer (localhost);   2) RunServer (network);   3) Migrations;   4) Shell;   5) Tailwind Watch   6) Collectstatic   7) Exit"
+read -p "Enter the number of your choice: " choice
+
+case $choice in
+    1)
+        echo -e "Running runserver (localhost)..."
+        python manage.py runserver
+        ;;
+
+    2) 
+        echo -e "Running runserver..."
+        python manage.py runserver 0.0.0.0:8000
+        ;;
+
+    3)
+        echo -e "Running make migrations..."
+        python manage.py makemigrations
+        echo -e "Running migrate..."
+        python manage.py migrate
+        ;;
+
+    4)
+        echo -e "Running shell..."
+        python manage.py shell
+        ;;
+
+    5)
+        echo -e "Running tailwind watch..."
+        npx tailwindcss -i ./frontend/src/input.css -o ./static/css/styles.css --watch
+        ;;
+
+    6)
+        echo -e "Collecting Static Files..."
+        ./manage.py collectstatic
+        ;;
+
+    7)
+        echo -e "Exiting..."
+        ;;
+    *)
+        echo -e "Invalid choice. Please run the script again and choose a valid option."
+        ;;
+esac
